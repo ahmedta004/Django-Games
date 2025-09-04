@@ -100,9 +100,3 @@ A web application built with **Django** for hosting and playing simple games. Th
 Want to add a new game? Create a new Django app inside the project and submit a pull request!
 
 ----------
-
-## 📜 License
-
-This project is licensed under the MIT License – see the [LICENSE](https://chatgpt.com/c/LICENSE) file for details.
-
-----------
