@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Number Guessing Game</title>
+</head>
+<body>
+    <h1>🔢 Number Guessing Game</h1>
+    <p>Guess a number between 1 and 100.</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="number" name="guess" required>
+        <button type="submit">Guess</button>
+    </form>
+
+    {% if feedback %}
+        <p>{{ feedback }}</p>
+    {% endif %}
+
+    <p>Attempts: {{ attempts }}</p>
+
+    <a href="{% url 'guess_start' %}">Start a new game</a>
+</body>
+</html>

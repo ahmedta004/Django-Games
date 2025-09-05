@@ -1,0 +1,24 @@
+<!-- tictactoe/templates/tictactoe/base.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Tic Tac Toe{% endblock %}</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'tictactoe/style.css' %}">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Tic Tac Toe</h1>
+    </header>
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+    <footer>
+      <small>Built with Django • Session-based</small>
+    </footer>
+  </div>
+</body>
+</html>

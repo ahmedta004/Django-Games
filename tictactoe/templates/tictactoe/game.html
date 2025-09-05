@@ -1,0 +1,33 @@
+<!-- tictactoe/templates/tictactoe/game.html -->
+{% extends "tictactoe/base.html" %}
+{% block title %}Game - Tic Tac Toe{% endblock %}
+{% block content %}
+  <div class="status">
+    {% if game.winner %}
+      <strong>Winner: {{ game.winner }}</strong>
+    {% elif game.draw %}
+      <strong>Draw!</strong>
+    {% else %}
+      <strong>Turn: {{ game.player }}</strong>
+    {% endif %}
+  </div>
+
+  <div class="board">
+    {% for cell in game.board %}
+      <form method="post" action="{% url 'tictactoe:move' forloop.counter0 %}">
+        {% csrf_token %}
+        <button class="cell" type="submit" {% if cell or game.winner or game.draw %}disabled{% endif %}>
+          {{ cell }}
+        </button>
+      </form>
+    {% endfor %}
+  </div>
+
+  <div class="controls">
+    <a class="btn-link" href="{% url 'tictactoe:reset' %}">Back to Home / Reset</a>
+    <form action="{% url 'tictactoe:new_game' %}" method="post" style="display:inline">
+      {% csrf_token %}
+      <button class="btn" type="submit">New Game</button>
+    </form>
+  </div>
+{% endblock %}

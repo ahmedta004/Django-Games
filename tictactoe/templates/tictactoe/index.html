@@ -1,0 +1,10 @@
+<!-- tictactoe/templates/tictactoe/index.html -->
+{% extends "tictactoe/base.html" %}
+{% block title %}Start - Tic Tac Toe{% endblock %}
+{% block content %}
+  <p>Play Tic Tac Toe against a friend (same computer) — X starts.</p>
+  <form action="{% url 'tictactoe:new_game' %}" method="post">
+    {% csrf_token %}
+    <button class="btn" type="submit">Start New Game</button>
+  </form>
+{% endblock %}
