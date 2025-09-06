@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Game Hub</title>
-</head>
-<body>
-    <h1>Welcome to Django Games Hub 🎮</h1>
-<ul>
-    <li><a href="{% url 'tictactoe:index' %}">Play Tic Tac Toe</a></li>
-    <li><a href="{% url 'rps:play' %}">Play Rock Paper Scissors</a></li>
-    <li><a href="{% url 'guess:guess_play' %}">Play Guessing Game</a></li>
-</ul>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+    <h1>Welcome to Game Hub 🎮</h1>
+    <p>Choose a game from the menu above.</p>
+{% endblock %}
